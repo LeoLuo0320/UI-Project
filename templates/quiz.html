@@ -8,7 +8,8 @@
 </div>
 <div>
   <h2>Question #{{question.quiz_id}}/5</h2>
-
+  <p>{{question.question}}</p>
+  <iframe width="560" height="315" src={{question.vid}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <form>
     <input type="radio" id={{question.op1}} name="ans" value={{question.op1}}>
     <label for={{question.op1}}>{{question.op1}}</label><br>

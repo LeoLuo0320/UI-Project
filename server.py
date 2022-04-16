@@ -6,12 +6,13 @@ app = Flask(__name__)
 quiz_questions = {
     "1":{
         "quiz_id" : "1",
+        "question" : "Watch the video and choose what violation/foul the player made.",
         "op1" : "24-second violation",
         "op2" : "8-second violation",
         "op3" : "Reach-In foul",
         "op4" : "No violation/foul",
         "ans" : "8-second violation",
-        "vid" : "",
+        "vid" : "https://www.youtube.com/embed/QgmH11CoM80",
         "next_lesson" : "end"
     }
 }
