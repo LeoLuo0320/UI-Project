@@ -3,11 +3,23 @@ from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
 
+quiz_questions = {
+    "1":{
+        "quiz_id" : "1",
+        "op1" : "24-second violation",
+        "op2" : "8-second violation",
+        "op3" : "Reach-In foul",
+        "op4" : "No violation/foul",
+        "ans" : "8-second violation",
+        "vid" : "",
+        "next_lesson" : "end"
+    }
+}
 
 # ROUTES
 @app.route('/')
 def welcome():
-    return render_template('welcome.html')   
+    return render_template('welcome.html')
 
 @app.route("/violations")
 def violations():
@@ -17,14 +29,11 @@ def violations():
 def fouls():
     return render_template("fouls.html")
 
-@app.route("/quiz")
-def quiz():
-    return render_template("quiz.html")
+@app.route("/quiz/<quiz_id>")
+def quiz(quiz_id):
+    question = quiz_questions[quiz_id]
+    return render_template("quiz.html", question = question)
 
 
 if __name__ == '__main__':
    app.run(debug = True)
-
-
-
-

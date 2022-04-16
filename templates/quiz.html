@@ -1,20 +1,24 @@
 {% extends "layout.html" %}
 {% block content %}
+<script type="text/javascript">
+  let question = {{question|tojson}}
+</script>
 <div>
     <h1>Quiz</h1>
 </div>
 <div>
-  <h2>Question #_/5</h2>
+  <h2>Question #{{question.quiz_id}}/5</h2>
 
   <form>
-    <input type="radio" id="24-second" name="ans" value="HTML">
-    <label for="24-second">24 second</label><br>
-    <input type="radio" id="Blocking" name="ans" value="CSS">
-    <label for="Blocking">Blocking</label><br>
-    <input type="radio" id="Reach" name="ans" value="JavaScript">
-    <label for="Reach">Reach</label>
+    <input type="radio" id={{question.op1}} name="ans" value={{question.op1}}>
+    <label for={{question.op1}}>{{question.op1}}</label><br>
+    <input type="radio" id={{question.op2}} name="ans" value={{question.op2}}>
+    <label for={{question.op2}}>{{question.op2}}</label><br>
+    <input type="radio" id={{question.op3}} name="ans" value={{question.op3}}>
+    <label for={{question.op3}}>{{question.op3}}</label><br>
+    <input type="radio" id={{question.op4}} name="ans" value={{question.op4}}>
+    <label for={{question.op4}}>{{question.op4}}</label>
   </form>
-
   <button class="btn btn-info">Check Answer</button>
 </div>
 {% endblock %}
