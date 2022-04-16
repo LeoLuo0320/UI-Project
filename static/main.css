@@ -1,0 +1,95 @@
+body {
+    background-color: lightgray;
+}
+
+#home-welcome {
+    margin-top: 200px;
+}
+
+#home-title {
+    margin: auto;
+    text-align: center;
+}
+
+#welcome {
+    color: gray;
+}
+
+#user-choice {
+    padding-top: 200px;
+}
+
+
+
+
+
+/* #add-player-title {
+    text-align: center;
+}
+
+#edit-player-title {
+    text-align: center;
+}
+
+#home-popular {
+    margin: 20px 0px;
+}
+
+.success {
+    color: green;
+}
+
+.fail {
+    color: red;
+}
+
+.home-popular-name {
+    text-align: center;
+}
+
+.popular-players {
+    outline: 1px solid grey;
+    text-align: center;
+}
+
+.home-popular-pic {
+    width: 100%;
+}
+
+.view-img {
+    width: 90%;
+    padding: auto 0;
+}
+
+.add-player-title,
+.edit-player-title {
+    margin: 10px 0;
+}
+
+.add-player-row,
+.edit-player-row {
+    margin: 10px 0px 10px 0;
+}
+
+.welcome-title {
+    background-color: lightskyblue;
+}
+
+.highlight {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#edit-submit-discard {
+    margin: 10px auto;
+}
+
+
+.my-bg {
+    background-color: #1e90ff;
+}
+
+
+textarea {
+    width: 50%;
+} */

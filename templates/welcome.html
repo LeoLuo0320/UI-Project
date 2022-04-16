@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container" id="home-welcome">
+    <div class="row welcome-title">
+        <div class="col-9" id="home-title">
+            <h2><b>Welcome to Basketball Master</b></h2>
+            <div id="welcome">
+                <h3>The site that helps you understand the basics of a basketball game and enables you to watch
+                    games with your family and friends!</h3>
+            </div>
+            <div id="user-choice" class="row">
+                <h4>Select a section to start</h4>
+                <div class="col-4">
+                    <button class="btn btn-info"><a href="/violations">Learn Violations</a></button>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-info"><a href="/fouls">Learn Fouls</a></button>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-info"><a href="/quiz">Take A Quiz</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
