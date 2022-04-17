@@ -22,13 +22,19 @@
 
 <div id="feedback"></div>
 
-<div id="next"></div>
+<div id="next">
+  <button class="btn btn-primary next-q">Next Question</button>
+</div>
 
 <script type="text/javascript">
   let question = {{question|tojson}}
 
   $(document).ready(function () {
-
+    $(".next-q").click(function (event) {
+      event.preventDefault()
+      var url = "/quiz/" + question.next_lesson;
+      window.location.href = url;
+    })
     $(".check-ans").click(function (event) {
         console.log("check answer")
         event.preventDefault()
@@ -50,9 +56,7 @@
         }
         //var answer = document.getElementsByName('ans');
         //console.log(answer)
-        var buttonText = '<button class="btn btn-primary" href="/quiz/' + question.next_lesson+'">Next Page</button>'
-        //$('#next').append('<button class="btn btn-primary">Next Page</button>');
-        $('#next').append(buttonText);
+
     })
 
 
