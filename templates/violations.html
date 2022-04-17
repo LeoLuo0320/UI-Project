@@ -1,6 +1,86 @@
 {% extends "layout.html" %}
 {% block content %}
-<div>
-    <h1>Violations</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div>
+                <h3>{{violation.title}}</h3>
+            </div>
+            <div>
+                {% if violation.media_type == 'pic' %}
+                <img src="{{url_for('static', filename=violation.media)}}" alt="violation_def" class="learning-media">
+                {% elif violation.media_type == 'video'%}
+                <iframe width="560" height="315" src="{{violation.media}}" title=" YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-6">
+            <div>
+                <h2>Definition</h2>
+                {{violation.definition}}
+            </div>
+            {% if violation.video_explanation%}
+            <h2>Video Explanation</h2>
+            {{violation.video_explanation}}
+            {% endif %}
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        {%if violation.violation_id !="1"%}
+        <div class="col-1">
+            <button class="btn btn-primary prev-page">Previous</button>
+        </div>
+        {%endif%}
+        {%if violation.violation_id !="4"%}
+        <div class="col-1">
+            <button class="btn btn-primary next-page">Next</button>
+        </div>
+        {%else%}
+        <div class="col-1">
+            <button class="btn btn-primary next-page">Learn Fouls</button>
+        </div>
+        <div class="col-1">
+            <button class="btn btn-primary take-quiz">Take Quiz</button>
+        </div>
+        {%endif%}
+    </div>
 </div>
+<script>
+    let violation = {{ violation| tojson}}
+
+    $(document).ready(function () {
+        $(".next-page").click(function (event) {
+            console.log("next page")
+            event.preventDefault()
+            if (violation.violation_id != "4") {
+                cur_id = parseInt(violation.violation_id)
+                next_id = String(cur_id + 1)
+                $(location).attr("href", "/violations/" + next_id)
+            }
+            else {
+
+                $(location).attr("href", "/fouls/1")
+            }
+        })
+
+        $(".take-quiz").click(function (event) {
+            console.log("next page")
+            event.preventDefault()
+            $(location).attr("href", "/quiz/1")
+
+        })
+
+        $(".prev-page").click(function (event) {
+            console.log("prev page")
+            event.preventDefault()
+            cur_id = parseInt(violation.violation_id)
+            prev_id = String(cur_id - 1)
+            $(location).attr("href", "/violations/" + prev_id)
+
+        })
+
+    })
+</script>
 {% endblock %}
