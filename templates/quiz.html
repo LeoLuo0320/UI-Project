@@ -4,7 +4,8 @@
     <h1>Quiz</h1>
 </div>
 <div>
-  <h2>Question #{{question.quiz_id}}/5</h2>
+  <h2>Question {{question.quiz_id}}/5</h2>
+  <p>Score: {{question.score}}/{{question.num}}</p>
   <p>{{question.question}}</p>
   <iframe width="560" height="315" src={{question.vid}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <form>
