@@ -75,12 +75,23 @@ quiz_questions = {
     "1":{
         "quiz_id" : "1",
         "question" : "Watch the video and choose what violation/foul the player made.",
-        "op1" : "24-second violation",
-        "op2" : "8-second violation",
-        "op3" : "Reach-In foul",
-        "op4" : "No violation/foul",
-        "ans" : "8-second violation",
+        "op1" : '24-second violation',
+        "op2" : '8-second violation',
+        "op3" : 'Reach-In foul',
+        "op4" : 'No violation/foul',
+        "ans" : '8-second violation',
         "vid" : "https://www.youtube.com/embed/QgmH11CoM80",
+        "next_lesson" : "2"
+    },
+    "2":{
+        "quiz_id" : "2",
+        "question" : "Watch the video and choose what violation/foul the player made.",
+        "op1" : '24-second violation',
+        "op2" : 'Blocking foul',
+        "op3" : '5-second violation',
+        "op4" : 'No violation/foul',
+        "ans" : '5-second violation',
+        "vid" : "https://www.youtube.com/embed/exuw3rPw6vg",
         "next_lesson" : "end"
     }
 }

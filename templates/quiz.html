@@ -1,8 +1,5 @@
 {% extends "layout.html" %}
 {% block content %}
-<script type="text/javascript">
-  let question = {{question|tojson}}
-</script>
 <div>
     <h1>Quiz</h1>
 </div>
@@ -20,6 +17,56 @@
     <input type="radio" id={{question.op4}} name="ans" value={{question.op4}}>
     <label for={{question.op4}}>{{question.op4}}</label>
   </form>
-  <button class="btn btn-info">Check Answer</button>
+  <button class="btn btn-primary check-ans">Check Answer</button>
 </div>
+
+<div id="feedback"></div>
+
+<div id="next"></div>
+
+<script type="text/javascript">
+  let question = {{question|tojson}}
+
+  $(document).ready(function () {
+
+    $(".check-ans").click(function (event) {
+        console.log("check answer")
+        event.preventDefault()
+        var ele = document.getElementsByName('ans');
+        //navigate to their input
+        for(i = 0; i < ele.length; i++) {
+          if(ele[i].checked){
+            //document.getElementById("result").innerHTML = "Answer: "+ele[i].value;
+            //console.log(ele[i].value)
+            //console.log(question.ans)
+            if((question.ans).includes(ele[i].value)){
+              //Right answer
+              document.getElementById("feedback").innerHTML = "Correct";
+            }else{
+              //Wrong answer
+              document.getElementById("feedback").innerHTML = "Incorrect. The right answer was " + question.ans;
+            }
+          }
+        }
+        //var answer = document.getElementsByName('ans');
+        //console.log(answer)
+        var buttonText = '<button class="btn btn-primary" href="/quiz/' + question.next_lesson+'">Next Page</button>'
+        //$('#next').append('<button class="btn btn-primary">Next Page</button>');
+        $('#next').append(buttonText);
+    })
+
+
+  })
+
+
+  // $( document ).ready(function() {
+  //   $("#check_ans").input(function(){
+  //     if("{{question.ans}}" == $('input[name="ans"]:checked').val()){
+  //       window.location.href = "/"
+  //     }else{
+  //       window.location.href = "/violations"
+  //     }
+  //   })
+  // })
+</script>
 {% endblock %}
