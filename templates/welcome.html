@@ -12,17 +12,39 @@
             <div id="user-choice" class="row">
                 <h4>Select a section to start</h4>
                 <div class="col-4">
-                    <button class="btn btn-info"><a href="/violations/1">Learn Violations</a></button>
+                    <button class="btn btn-primary" id="learn-violations">Learn Violations</button>
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-info"><a href="/fouls/1">Learn Fouls</a></button>
+                    <button class="btn btn-primary" id="learn-fouls">Learn Fouls</button>
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-info"><a href="/quiz/1">Take A Quiz</a></button>
+                    <button class="btn btn-primary" id="take-quiz">Take A Quiz</button>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
+
+<script>
+    $(document).ready(function () {
+        $("#learn-violations").click(function (event) {
+            console.log("next page")
+            event.preventDefault()
+            $(location).attr("href", "/violations/1")
+
+        })
+        $("#learn-fouls").click(function (event) {
+            console.log("next page")
+            event.preventDefault()
+            $(location).attr("href", "/fouls/1")
+
+        })
+        $("#take-quiz").click(function (event) {
+            console.log("next page")
+            event.preventDefault()
+            $(location).attr("href", "/quiz/1")
+
+        })
+    })
+</script>
 {% endblock %}
