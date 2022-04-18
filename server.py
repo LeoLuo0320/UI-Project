@@ -100,6 +100,12 @@ quiz_questions = {
     }
 }
 
+user_info = {
+    "num_corret_quiz": "0"
+}
+
+
+
 # ROUTES
 @app.route('/')
 def welcome():
@@ -115,11 +121,24 @@ def fouls(foul_id):
     foul = fouls_data[foul_id]
     return render_template("fouls.html", foul=foul)
 
+@app.route("/quiz/home")
+def quiz_home():
+    return render_template("quiz_home.html")
+
 @app.route("/quiz/<quiz_id>")
 def quiz(quiz_id):
     question = quiz_questions[quiz_id]
-    return render_template("quiz.html", question = question)
+    return render_template("quiz.html", question = question, user_info=user_info)
 
+@app.route('/correct_answer', methods=['GET', 'POST', 'PUT'])
+def correct_answer():
+    user_info["num_corret_quiz"] = str(int(user_info["num_corret_quiz"])+1)
+    return user_info
+
+@app.route('/reset_quiz', methods=['GET', 'POST', 'PUT'])
+def reset_quiz():
+    user_info["num_corret_quiz"] = "0"
+    return user_info
 
 if __name__ == '__main__':
    app.run(debug = True)
