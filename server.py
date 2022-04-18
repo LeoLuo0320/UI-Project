@@ -82,7 +82,6 @@ quiz_questions = {
         "op4" : 'No violation/foul',
         "ans" : '8-second violation',
         "vid" : "https://www.youtube.com/embed/QgmH11CoM80",
-        "score": 0,
         "next_lesson" : "2"
     },
     "2":{
@@ -94,8 +93,7 @@ quiz_questions = {
         "op3" : '5-second violation',
         "op4" : 'No violation/foul',
         "ans" : '5-second violation',
-        "vid" : "https://www.youtube.com/embed/exuw3rPw6vg",
-        "score" : 0,
+        "vid" : "https://www.youtube.com/embed/YmwwAZB8ig4",
         "next_lesson" : "3"
     },
     "3":{
@@ -104,24 +102,22 @@ quiz_questions = {
         "num": 2,
         "op1" : '24-second violation',
         "op2" : '8-second violation',
-        "op3" : 'Reach-In foul',
-        "op4" : 'No violation/foul',
-        "ans" : '8-second violation',
-        "vid" : "https://www.youtube.com/embed/QgmH11CoM80",
-        "score": 0,
+        "op3" : 'Blocking foul',
+        "op4" : 'Charging foul',
+        "ans" : 'Blocking foul',
+        "vid" : "https://www.youtube.com/embed/j7C52R4QG7Q",
         "next_lesson" : "4"
     },
     "4":{
         "quiz_id" : "4",
         "question" : "Watch the video and choose what violation/foul the player made.",
         "num": 3,
-        "op1" : '24-second violation',
-        "op2" : '8-second violation',
-        "op3" : 'Reach-In foul',
+        "op1" : 'Charging foul',
+        "op2" : 'Blocking foul',
+        "op3" : 'Holding foul',
         "op4" : 'No violation/foul',
-        "ans" : '8-second violation',
-        "vid" : "https://www.youtube.com/embed/QgmH11CoM80",
-        "score": 0,
+        "ans" : 'Charging foul',
+        "vid" : "https://www.youtube.com/embed/JIATPC6fEHY",
         "next_lesson" : "5"
     },
     "5":{
@@ -134,7 +130,6 @@ quiz_questions = {
         "op4" : 'No violation/foul',
         "ans" : '8-second violation',
         "vid" : "https://www.youtube.com/embed/QgmH11CoM80",
-        "score": 0,
         "next_lesson" : "end"
     },
 }
