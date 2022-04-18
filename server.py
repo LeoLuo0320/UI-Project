@@ -96,8 +96,47 @@ quiz_questions = {
         "ans" : '5-second violation',
         "vid" : "https://www.youtube.com/embed/exuw3rPw6vg",
         "score" : 0,
+        "next_lesson" : "3"
+    },
+    "3":{
+        "quiz_id" : "3",
+        "question" : "Watch the video and choose what violation/foul the player made.",
+        "num": 2,
+        "op1" : '24-second violation',
+        "op2" : '8-second violation',
+        "op3" : 'Reach-In foul',
+        "op4" : 'No violation/foul',
+        "ans" : '8-second violation',
+        "vid" : "https://www.youtube.com/embed/QgmH11CoM80",
+        "score": 0,
+        "next_lesson" : "4"
+    },
+    "4":{
+        "quiz_id" : "4",
+        "question" : "Watch the video and choose what violation/foul the player made.",
+        "num": 3,
+        "op1" : '24-second violation',
+        "op2" : '8-second violation',
+        "op3" : 'Reach-In foul',
+        "op4" : 'No violation/foul',
+        "ans" : '8-second violation',
+        "vid" : "https://www.youtube.com/embed/QgmH11CoM80",
+        "score": 0,
+        "next_lesson" : "5"
+    },
+    "5":{
+        "quiz_id" : "5",
+        "question" : "Watch the video and choose what violation/foul the player made.",
+        "num": 4,
+        "op1" : '24-second violation',
+        "op2" : '8-second violation',
+        "op3" : 'Reach-In foul',
+        "op4" : 'No violation/foul',
+        "ans" : '8-second violation',
+        "vid" : "https://www.youtube.com/embed/QgmH11CoM80",
+        "score": 0,
         "next_lesson" : "end"
-    }
+    },
 }
 
 user_info = {
@@ -120,6 +159,10 @@ def violations(violation_id):
 def fouls(foul_id):
     foul = fouls_data[foul_id]
     return render_template("fouls.html", foul=foul)
+
+@app.route("/quiz/end")
+def quiz_end():
+    return render_template("quiz_summary.html", user_info=user_info)
 
 @app.route("/quiz/home")
 def quiz_home():

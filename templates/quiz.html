@@ -5,7 +5,7 @@
 </div>
 <div>
   <h2>Question {{question.quiz_id}}/5</h2>
-  <p>Score: {{user_info.num_corret_quiz}}/{{question.num}}</p>
+  <p>Current Score: {{user_info.num_corret_quiz}}/{{question.num}}</p>
   <p>{{question.question}}</p>
   <iframe width="560" height="315" src={{question.vid}} title="YouTube video player" frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -26,7 +26,13 @@
 <div id="feedback"></div>
 
 <div id="next">
-  <button class="btn btn-primary next-q">Next Question</button>
+  <button class="btn btn-primary next-q">
+    {%if question.quiz_id == '5'%}
+    Summary
+    {%else%}
+    Next Question
+    {%endif%}
+  </button>
 </div>
 
 <script type="text/javascript">
@@ -55,6 +61,22 @@
   $(document).ready(function () {
     $(".next-q").click(function (event) {
       event.preventDefault()
+      var ele = document.getElementsByName('ans');
+      for (i = 0; i < ele.length; i++) {
+        if (ele[i].checked) {
+          //document.getElementById("result").innerHTML = "Answer: "+ele[i].value;
+          //console.log(ele[i].value)
+          //console.log(question.ans)
+          if ((question.ans).includes(ele[i].value)) {
+            //Right answer
+            document.getElementById("feedback").innerHTML = "Correct";
+            correct_answer()
+          } else {
+            //Wrong answer
+            document.getElementById("feedback").innerHTML = "Incorrect. The right answer was " + question.ans;
+          }
+        }
+      }
       var url = "/quiz/" + question.next_lesson;
       window.location.href = url;
     })

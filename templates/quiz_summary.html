@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container" id="home-welcome">
+    <div class="row welcome-title">
+        <div class="col-9" id="home-title">
+            <h2><b>Quiz Summary</b></h2>
+            <div id="welcome">
+                <h3>You score {{user_info.num_corret_quiz}}/5</h3>
+                {% set score = user_info.num_corret_quiz | int %}
+                {%if score > 2%}
+                <h4>Great Job! Now go and join your family or
+                    friends for a basketball game!
+                </h4>
+                {%else%}
+                <h4>Please learn the materials more carefully and
+                    take the quiz again</h4>
+                {%endif%}
+            </div>
+            <div id="user-choice" class="row">
+                <h4>Take the Quiz Again</h4>
+
+                <button class="btn btn-primary" id="start-quiz">Start</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function reset_quiz() {
+        console.log("here")
+        $.ajax({
+            type: "POST",
+            url: "/reset_quiz",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify("1"),
+            success: function (result) {
+                console.log("start quiz")
+            },
+            error: function (request, status, error) {
+                console.log("Error");
+                console.log(request)
+                console.log(status)
+                console.log(error)
+            }
+        });
+    }
+    $(document).ready(function () {
+        $("#start-quiz").click(function (event) {
+            event.preventDefault()
+            reset_quiz()
+            $(location).attr("href", "/quiz/1")
+        })
+    })
+</script>
+{% endblock %}
