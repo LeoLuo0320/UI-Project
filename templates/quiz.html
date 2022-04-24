@@ -11,14 +11,14 @@
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen></iframe>
   <form>
-    <input type="radio" id={{question.op1}} name="ans" value={{question.op1}}>
-    <label for={{question.op1}}>{{question.op1}}</label><br>
-    <input type="radio" id={{question.op2}} name="ans" value={{question.op2}}>
-    <label for={{question.op2}}>{{question.op2}}</label><br>
-    <input type="radio" id={{question.op3}} name="ans" value={{question.op3}}>
-    <label for={{question.op3}}>{{question.op3}}</label><br>
-    <input type="radio" id={{question.op4}} name="ans" value={{question.op4}}>
-    <label for={{question.op4}}>{{question.op4}}</label>
+    <input class="form-check-input" type="radio" id={{question.op1}} name="ans" value={{question.op1}}>
+    <label class="form-check-label" for={{question.op1}}>{{question.op1}}</label><br>
+    <input class="form-check-input" type="radio" id={{question.op2}} name="ans" value={{question.op2}}>
+    <label class="form-check-label" for={{question.op2}}>{{question.op2}}</label><br>
+    <input class="form-check-input" type="radio" id={{question.op3}} name="ans" value={{question.op3}}>
+    <label class="form-check-label" for={{question.op3}}>{{question.op3}}</label><br>
+    <input class="form-check-input" type="radio" id={{question.op4}} name="ans" value={{question.op4}}>
+    <label class="form-check-label" for={{question.op4}}>{{question.op4}}</label>
   </form>
   <div id="feedback"></div>
   <button class="btn btn-primary check-ans" id="check-answer">Check Answer</button>
