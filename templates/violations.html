@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="container">
+<div class="container card">
     <div class="row">
         <div class="col-6">
             <div>
@@ -29,19 +29,19 @@
     </div>
     <div class="row justify-content-end">
         {%if violation.violation_id !="1"%}
-        <div class="col-1">
+        <div class="col-2">
             <button class="btn btn-primary prev-page">Previous</button>
         </div>
         {%endif%}
         {%if violation.violation_id !="4"%}
-        <div class="col-1">
+        <div class="col-2">
             <button class="btn btn-primary next-page">Next</button>
         </div>
         {%else%}
-        <div class="col-1">
+        <div class="col-2">
             <button class="btn btn-primary next-page">Learn Fouls</button>
         </div>
-        <div class="col-1">
+        <div class="col-2">
             <button class="btn btn-primary take-quiz">Take Quiz</button>
         </div>
         {%endif%}

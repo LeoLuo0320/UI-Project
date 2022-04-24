@@ -20,13 +20,13 @@
     <input type="radio" id={{question.op4}} name="ans" value={{question.op4}}>
     <label for={{question.op4}}>{{question.op4}}</label>
   </form>
+  <div id="feedback"></div>
   <button class="btn btn-primary check-ans" id="check-answer">Check Answer</button>
 </div>
 
-<div id="feedback"></div>
 
 <div id="next">
-  <button class="btn btn-primary next-q">
+  <button class="btn btn-primary next-q" id="next-question" hidden="hidden">
     {%if question.next_lesson == 'end'%}
     Summary
     {%else%}
@@ -84,13 +84,14 @@
       console.log("check answer")
       event.preventDefault()
       var ele = document.getElementsByName('ans');
-      $("#check-answer").remove()
       //navigate to their input
+      let flag = false
       for (i = 0; i < ele.length; i++) {
         if (ele[i].checked) {
           //document.getElementById("result").innerHTML = "Answer: "+ele[i].value;
           //console.log(ele[i].value)
           //console.log(question.ans)
+          flag = true
           if ((question.ans).includes(ele[i].value)) {
             //Right answer
             document.getElementById("feedback").innerHTML = "Correct";
@@ -100,6 +101,14 @@
             document.getElementById("feedback").innerHTML = "Incorrect. The right answer was " + question.ans;
           }
         }
+
+      }
+      if (!flag) {
+        document.getElementById("feedback").innerHTML = "Please select an answer";
+      }
+      else {
+        $("#check-answer").remove()
+        $('#next-question').removeAttr("hidden");
       }
       //var answer = document.getElementsByName('ans');
       //console.log(answer)
