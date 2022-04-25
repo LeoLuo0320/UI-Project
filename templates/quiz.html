@@ -8,9 +8,11 @@
   <div class="row">
     <div class="col-6">
       <h2>Question {{question.quiz_id}}/6</h2>
-      <iframe width="100%" height="400" src={{question.vid}} title="YouTube video player" frameborder="0"
+      <iframe
+        width="100%" height="400" src={{question.vid}} title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+        allowfullscreen>
+      </iframe>
     </div>
     <div class="col-6">
       <h2>Current Score: {{user_info.num_corret_quiz}}/{{question.num}}</h2>
