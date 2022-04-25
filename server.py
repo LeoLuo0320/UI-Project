@@ -179,8 +179,8 @@ def quiz_home():
 def quiz(quiz_id):
     question = quiz_questions[quiz_id]
     vid_id = question["vid"].split("/embed/")[1]
-    question["vid"] += "?loop=1&playlist=" + vid_id
-    return render_template("quiz.html", question = question, user_info=user_info)
+    options = "?loop=1&playlist=" + vid_id
+    return render_template("quiz.html", question = question, options=options, user_info=user_info)
 
 @app.route('/correct_answer', methods=['GET', 'POST', 'PUT'])
 def correct_answer():
