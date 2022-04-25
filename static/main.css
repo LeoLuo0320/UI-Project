@@ -22,6 +22,7 @@ body {
 .card {
   margin-top: 200px;
   background-color: rgb(254, 254, 187);
+  padding: 5vh 5vw;
   border: none;
 }
 
