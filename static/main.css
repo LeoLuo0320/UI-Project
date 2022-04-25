@@ -15,6 +15,11 @@ body {
   padding-top: 200px;
 }
 
+#extra_space {
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
 .learning-media {
   width: 100%;
 }
@@ -23,7 +28,14 @@ body {
   margin-top: 200px;
   background-color: rgb(254, 254, 187);
   border: none;
+  margin-bottom: 200px;
 }
+
+.selection-start-format {
+  padding-bottom: 200px;
+}
+
+
 
 /* #add-player-title {
     text-align: center;
