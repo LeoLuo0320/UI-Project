@@ -1,5 +1,5 @@
 body {
-  background-color: lightgray;
+  background-color: #697184;
 }
 
 #home-title {
@@ -15,6 +15,14 @@ body {
   padding-top: 200px;
 }
 
+#check-answer {
+  margin-top: 20px;
+}
+
+#next-question {
+  margin-top: 20px;
+}
+
 #extra_space {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -24,9 +32,10 @@ body {
   width: 100%;
 }
 
+
 .card {
-  margin-top: 200px;
-  background-color: rgb(254, 254, 187);
+  margin-top: 100px;
+  background-color: #F2F1EF;
   padding: 5vh 5vw;
   border: none;
 }
@@ -40,5 +49,5 @@ body {
 }
 
 .quiz-body {
-  margin-top: 100px;
+  margin-top: 50px;
 }
